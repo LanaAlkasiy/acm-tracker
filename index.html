@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ACM Tracker — roll &amp; vote log</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <!-- Optional: enables one shared live tracker across every visitor when
      hosted as a plain static page (e.g. GitHub Pages). See FIREBASE_CONFIG
      near the top of the script below. Harmless no-op if unconfigured or if
@@ -150,6 +150,8 @@
   nav.rail button .count { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
   nav.rail button:hover { background: var(--paper-2); color: var(--ink); }
   nav.rail button.active { background: var(--paper-3); color: var(--ink); font-weight: 600; }
+  .rail-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); padding: 12px 12px 5px; }
+  nav.rail button.member-link { padding-left: 22px; font-size: 13px; }
   nav.rail hr { border: none; border-top: 1px solid var(--line); margin: 10px 6px; width: calc(100% - 12px); }
 
   main.view { flex: 1; min-width: 0; padding: 22px 26px 60px; }
@@ -339,6 +341,7 @@
       border-bottom: 1px solid var(--line); padding: 10px 12px; gap: 6px;
     }
     nav.rail hr { display: none; }
+    .rail-label { display: none; }
     nav.rail button { white-space: nowrap; }
     main.view { padding: 18px 16px 50px; }
     .entry-row { grid-template-columns: 1fr auto 16px; row-gap: 4px; }
@@ -358,7 +361,7 @@
 </head>
 <body>
 <div id="app"></div>
-<script type="application/json" id="app-state">{"people":[],"meetings":[],"members":[],"tasks":[]}</script>
+<script type="application/json" id="app-state">{"people":[{"id":"f4860c0d-a52d-434e-b7b8-8e6ce4eb433c","name":"Asmaa"},{"id":"35b8d8ad-6bd1-4a9a-8df9-30bb56ef99fa","name":"Hafsa"},{"id":"38ffc236-eae2-4b0e-9e1a-eb52f6542266","name":"Omar"},{"id":"28c1a5c3-2e12-4884-88ef-1107ece25138","name":"Abdelrahman"},{"id":"46bc3ac2-220c-4808-bdbe-f522e5a8faa5","name":"A. Adam"},{"id":"0d6121ca-a540-45be-8f04-414fa1e2bfff","name":"Mariam"},{"id":"71b69d6a-bd1b-4a63-aa00-765d277e88d5","name":"Ali"},{"id":"f3bc0f32-3c91-4539-b3d4-8495629e3485","name":"Abdelhakim Akhadkhou"},{"id":"a6523f01-b113-462c-a0a1-fdb3bf47857d","name":"Omair Nawaz"}],"meetings":[{"attendedIds":["Asmaa","Hafsa","Abdelrahman","Abdelhakim Akhadkhou","A. Adam","Omar","38ffc236-eae2-4b0e-9e1a-eb52f6542266","35b8d8ad-6bd1-4a9a-8df9-30bb56ef99fa","f4860c0d-a52d-434e-b7b8-8e6ce4eb433c","28c1a5c3-2e12-4884-88ef-1107ece25138","f3bc0f32-3c91-4539-b3d4-8495629e3485","46bc3ac2-220c-4808-bdbe-f522e5a8faa5"],"date":"2026-09-24","group":"technical","id":"a75fd08d-c2d4-4940-8b87-ab2093b41af0","name":"Github Workshop","time":"17:00","type":"Workshop","votedIds":["f3bc0f32-3c91-4539-b3d4-8495629e3485","f4860c0d-a52d-434e-b7b8-8e6ce4eb433c"]},{"attendedIds":["a6523f01-b113-462c-a0a1-fdb3bf47857d"],"date":"2026-09-19","group":"events","id":"e4cf887c-482a-4968-9242-d0588d349556","name":"Welcome to ACM events","time":"14:30","type":"Online meeting","votedIds":["Omair Nawaz"]},{"attendedIds":["35b8d8ad-6bd1-4a9a-8df9-30bb56ef99fa","a6523f01-b113-462c-a0a1-fdb3bf47857d","38ffc236-eae2-4b0e-9e1a-eb52f6542266","f3bc0f32-3c91-4539-b3d4-8495629e3485"],"date":"2026-10-22","group":"core","id":"45cc5d88-d1b5-45ca-b075-967fd9280b22","name":"FALL 2026 gathering ","time":"17:00","type":"In-person meeting","votedIds":[]},{"attendedIds":["a6523f01-b113-462c-a0a1-fdb3bf47857d"],"date":"2026-10-14","group":"events","id":"5ecbe5fa-3e14-4748-8d9e-686dc8a76fa0","name":"Event preparations","time":"18:00","type":"Online meeting","votedIds":["a6523f01-b113-462c-a0a1-fdb3bf47857d"]}],"members":[{"email":"la2403361@qu.edu.qa","id":"5152b828-a16a-43bf-b9e8-5196c772fefb","major":"Computer Science","name":"Lana Alkasiy","phone":"31512917","position":"Secretary"},{"email":"ns2106311@qu.edu.qa","id":"8933c6fa-5fa6-4b8e-af47-abeb314feb2d","major":"Computer Engineering","name":"Noor Soueid","phone":"66323251","position":"President"},{"email":"dh2408068@qu.edu.qa","id":"96012d27-e8de-429f-9a20-d38cac6110b7","major":"Computer Science","name":"Dana Hommos","phone":"66016868","position":"Vice President"},{"email":"aa2318467@qu.edu.qa","id":"1ee0b259-6a37-4762-8f9d-0944a9b1889c","major":"Mathematics","name":"Abdelhakim Akhadkhou","phone":"50699303","position":"Tech Lead"},{"email":"on2410028@qu.edu.qa","id":"f4875046-24e0-46f0-b71b-18d36c2e93e6","major":"Computer Engineering","name":"Omair Nawaz","phone":"33946982","position":"Events Lead"},{"email":"As2402437@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2029","id":"b739b10b-aea1-467f-95d9-d80f36b994f3","major":"Electrical Engineering","name":"Abdullah Islam Shah","phone":"30227666","position":"Tech"},{"email":"Nn2406125@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2028","id":"89b6b809-1476-424d-9507-df59331ab82d","major":"Computer engineering","name":"Nusrat jahan naurin","phone":"33052887","position":"Tech"},{"email":"ka2309917@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2027","id":"02f4a47c-8159-41f2-b932-0656b6d3df69","major":"Computer Science","name":"Khaled Elrefaey","phone":"50458559","position":"Tech"},{"email":"aa2504017@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2029","id":"6fe98ee5-938b-45ac-8d65-3807cc9a6eee","major":"Computer Science","name":"Alisar Ahmad Ajaj","phone":"50279187","position":"Tech"},{"email":"nm2401352@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2029","id":"d6f37f2e-f143-4940-8a0c-c19d4615ff78","major":"Mechanical Engineering","name":"Nihal Ashik","phone":"33725961","position":"Tech"},{"email":"ma2304380@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2027","id":"f99a8230-f061-4045-ad9f-8ee9eee6c44c","major":"Computer Science","name":"Mohamed Othman Aoussat Ayari","phone":"66555347","position":"Tech"},{"email":"ae2203650@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"df40f1b3-7e7f-4fc5-94e5-51f71d4ab7bc","major":"Computer Science","name":"Anas Elrahmani","phone":"50190547","position":"Tech"},{"email":"ae2209225@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"969744ff-682b-408e-967b-af0e97e9f46d","major":"Electrical Engineering","name":"Ayah Osman","phone":"33517656","position":"Tech"},{"email":"am2406104@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"c4a886ad-1185-4c83-bc68-ea9d5372e167","major":"Computer Science","name":"Abdulrahman Hakam Mousa","phone":"55003833","position":"Tech"},{"email":"aa2506864@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2029","id":"ddb80c90-c443-4d1e-8101-426f77ce3d3b","major":"Computer Science","name":"Aisha Ahmed","phone":"77042052","position":"Tech"},{"email":"ym2408983@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2028","id":"27c56c75-a4aa-4864-8a40-70f9e1a8050e","major":"Computer Science","name":"Yacine Merabet","phone":"33622714","position":"Tech"},{"email":"ht2314077@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2028","id":"692cb445-b5dd-4f8a-9634-820c5e2d51bb","major":"Computer Science","name":"Hafsa Moulana Hafez","phone":"51870659","position":"Tech"},{"email":"as2506214@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2029","id":"a0c6d56c-a685-4a04-be62-e25731ee37c5","major":"Computer Engineering","name":"Ammar Shoeb","phone":"72141944","position":"Tech"},{"email":"ma2209213@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"cb2304fc-cb67-4d67-a261-0a36ee15e493","major":"Computer Science","name":"Maryam Ashfaq","phone":"50124026","position":"Tech"},{"email":"ma2406974@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2028","id":"707eaddb-4960-401b-b80b-ae00aac131b6","major":"Computer Science","name":"Muhammad Ahmed","phone":"50400336","position":"Tech"},{"email":"na2307172@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"2657e207-72bd-44c1-a391-c6377df6a584","major":"Computer Science","name":"Najeeb Abdurahman Abdi","phone":"33047295","position":"Events"},{"email":"Re2307866@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"fb716712-28d2-49d7-bbd8-335b3c543b56","major":"Computer Science","name":"Rawan Samy Elmalh","phone":"33633619","position":"Events"},{"email":"ak2413221@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2028","id":"2914aaad-8778-414e-b2d4-d3a4d09963f4","major":"Computer Science","name":"Anas Ali Khan","phone":"55691150","position":"Events"},{"email":"sh2512203@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2029","id":"0095e421-5b1d-40ee-b226-6aafcec21f1a","major":"Electrical Engineering","name":"Shakhawat Hossain","phone":"50468131","position":"Events"},{"email":"sa2405408@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2028","id":"7e9b90d7-c00d-48c7-bd6c-0d3dab6c20be","major":"Computer Engineering","name":"Salih Alhaj","phone":"33903528","position":"Events"},{"email":"am2402006@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2028","id":"234ab230-9cf0-4661-941e-f3294ef61f24","major":"Computer Science","name":"Anas Osama Mohamed","phone":"55710547","position":"Events"},{"email":"zy2408618@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2028","id":"bc0f57c3-c66b-4094-877b-b33528c8707f","major":"Industrial Engineering","name":"Zaynab Yassine","phone":"66846561","position":"Events"},{"email":"hh2406699@qu.edu.qa","graduationSemester":"Fall","graduationYear":"2028","id":"f1ffd611-c868-41d6-83b9-c92f4eee9978","major":"Computer Engineering","name":"Hadeel Hassan","phone":"33744688","position":"Events"},{"email":"ik2206112@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"44e9c5d7-e8ac-4990-83c6-204733b7d292","major":"Computer Science","name":"Iman Khabaz","phone":"50901922","position":"Events"},{"email":"Ak2507681@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2029","id":"1113e0d7-c7a6-47cc-aa21-81ce2ca770d3","major":"Arts & Science","name":"Aamna Khan","phone":"5051 8733","position":"Events"},{"email":"aa2307776@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"637af4dd-4d23-4cf0-9d2f-39274fc87e95","major":"Computer Science","name":"Asmaa","phone":"33697715","position":"Events"},{"email":"zo2208168@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"69692838-4e5f-4f8a-9777-27cc5db2093a","major":"Computer Science","name":"Doha Gamaleldin Ahmed","phone":"55188383","position":"Events"},{"email":"Le2505966@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2029","id":"59a2f0f9-8c0f-4330-b1b1-39b83b1672b7","major":"Electrical Engineering","name":"Leen fadi Elayyan","phone":"33005464","position":"Events"},{"email":"hk2318103@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"153068cb-7f60-44a9-8cdd-acc4d8db64d7","major":"Computer Science","name":"Hashir Khan","phone":"66948186","position":"Creative"},{"email":"Ka2209737@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"e64b2fa9-d435-4c68-a13a-d7538caff90d","major":"MIS","name":"Khawlah Saleh alshataf","phone":"30269135","position":"Creative"},{"email":"aa2307776@qu.edu.qa","graduationSemester":"Spring","graduationYear":"2027","id":"b3e6d6eb-304f-4692-914c-09f85dfc94a9","major":"Computer Science","name":"Asmaa Aoun","phone":"33697715","position":"Creative"}],"tasks":[{"deadline":"2026-10-27","done":false,"id":"2252cd56-28b5-4579-a89e-5bf9baba395d","memberId":"5152b828-a16a-43bf-b9e8-5196c772fefb","title":"send emails to ...."}]}</script>
 <script>
 (function () {
   "use strict";
@@ -372,7 +375,8 @@
     { key: "events", label: "Events" },
     { key: "technical", label: "Technical Team" },
     { key: "creative", label: "Creative Team" },
-    { key: "board", label: "Board Members" }
+    { key: "board", label: "Board Members" },
+    { key: "core", label: "Core Members" }
   ];
   var TYPES = ["Online meeting", "In-person meeting", "Volunteering", "Workshop", "Social", "Other"];
   var TYPE_CLASS = {
@@ -383,15 +387,18 @@
     "Social": "type-social",
     "Other": "type-other"
   };
-  var POSITIONS = ["Events", "Events Lead", "Tech", "Tech Lead", "Creative", "Creative Lead", "President", "Vice President", "Secretary"];
+  var POSITIONS = ["Core Member", "Operations Manager", "Events", "Events Lead", "Tech", "Tech Lead", "Creative", "Creative Lead", "President", "Vice President", "Secretary"];
   var POSITION_CLASS = {
     "Events": "pos-events", "Events Lead": "pos-events pos-lead",
     "Tech": "pos-tech", "Tech Lead": "pos-tech pos-lead",
     "Creative": "pos-creative", "Creative Lead": "pos-creative pos-lead",
     "President": "pos-president", "Vice President": "pos-vp", "Secretary": "pos-secretary"
   };
-  var MEMBER_GROUPS = ["Board", "Events", "Tech", "Creative"];
+  var MEMBER_GROUPS = ["Board", "Tech", "Events", "Creative", "Unassigned"];
+  function memberGroup(m) { return POSITION_GROUP[m.position] || "Unassigned"; }
+  function groupLabel(g) { return g === "Tech" ? "Technical" : g; }
   var POSITION_GROUP = {
+    "Core Member": "Unassigned", "Operations Manager": "Board",
     "President": "Board", "Vice President": "Board", "Secretary": "Board",
     "Events Lead": "Events", "Events": "Events",
     "Tech Lead": "Tech", "Tech": "Tech",
@@ -422,6 +429,7 @@
     editingId: null,
     rosterQuery: "",
     theme: null,
+    memberGroup: null,
     taskMemberId: null
   };
 
@@ -429,6 +437,8 @@
   var fbRef = null;
   var persistMode = "local"; // "firebase" | "artifact" | "local" | "readonly"
   var canWrite = true;
+  var cloudReady = false;
+  var saveNotice = "";
 
   // ---- Optional shared backend ----
   // To make every visitor of a standalone deploy (e.g. GitHub Pages) read
@@ -460,11 +470,25 @@
     } catch (e) {}
   }
 
+  function cacheState() {
+    try {
+      localStorage.setItem("acm-tracker-data", JSON.stringify(state));
+      return true;
+    } catch (e) {
+      saveNotice = "Browser storage is unavailable. Download a saved copy before closing to keep your data.";
+      return false;
+    }
+  }
+
+  // Restore a local copy before waiting for the shared database.
+  loadLocalState();
+
   function initFirebase() {
     try {
       firebase.initializeApp(FIREBASE_CONFIG);
       fbRef = firebase.database().ref("acmTrackerData");
       fbRef.on("value", function (snap) {
+        cloudReady = true;
         var val = snap.val();
         if (val && typeof val === "object") {
           state.people = Array.isArray(val.people) ? val.people : [];
@@ -472,18 +496,27 @@
           state.members = Array.isArray(val.members) ? val.members : [];
           state.tasks = Array.isArray(val.tasks) ? val.tasks : [];
         }
+        cacheState();
         render();
       }, function (err) {
         console.error("Firebase read failed, falling back to local storage:", err);
         persistMode = "local";
-        loadLocalState();
+        saveNotice = "Shared sync is unavailable. Changes are saved in this browser; download a saved copy to keep a portable backup.";
         render();
       });
       persistMode = "firebase";
+      setTimeout(function () {
+        if (!cloudReady && persistMode === "firebase") {
+          fbRef.off();
+          persistMode = "local";
+          saveNotice = "Shared sync could not connect. Changes are saved in this browser; download a saved copy for backup.";
+          render();
+        }
+      }, 8000);
     } catch (e) {
       console.error("Firebase init failed, falling back to local storage:", e);
       persistMode = "local";
-      loadLocalState();
+      saveNotice = "Shared sync is unavailable. Changes are saved in this browser.";
     }
   }
 
@@ -539,7 +572,7 @@
   }
 
   function personName(id) {
-    var p = state.people.filter(function (x) { return x.id === id; })[0];
+    var p = state.members.concat(state.people).filter(function (x) { return x.id === id; })[0];
     return p ? p.name : "(removed)";
   }
 
@@ -569,21 +602,37 @@
 
   /* ---------------- persistence ---------------- */
   function persist(nextState) {
+    if (persistMode === "firebase" && !cloudReady) {
+      fbRef.off();
+      persistMode = "local";
+      saveNotice = "Shared storage is still connecting. Changes are saved in this browser; download a saved copy for backup.";
+    }
     state = nextState;
-    render();
-    if (persistMode === "firebase" && fbRef) {
+    cacheState();
+    if (persistMode === "firebase" && fbRef && cloudReady) {
       fbRef.set(state).catch(function (err) {
         console.error("Firebase save failed:", err);
+        saveNotice = "Shared save failed. Your changes are saved in this browser. Download a saved copy for backup.";
+        render();
       });
     } else if (persistMode === "artifact" && artifactAPI) {
-      var html = buildDoc(state);
-      artifactAPI.publish(html).catch(function (err) {
-        if (err && err.code === "conflict") return;
+      artifactAPI.publish(buildDoc(state)).catch(function (err) {
         console.error("ACM Tracker publish failed:", err);
+        saveNotice = "Preview save failed. Download a saved copy to keep your data.";
+        render();
       });
-    } else if (persistMode === "local") {
-      try { localStorage.setItem("acm-tracker-data", JSON.stringify(state)); } catch (e) {}
     }
+    render();
+  }
+
+  function downloadSavedCopy() {
+    var blob = new Blob([buildDoc(state)], { type: "text/html" });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = "acm-tracker-saved.html";
+    link.click();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
   }
 
   function buildDoc(s) {
@@ -600,7 +649,7 @@
     draft.newPeople.forEach(function (nm) {
       next.people.push({ id: uid(), name: nm });
     });
-    var record = {
+    var record = Object.assign({}, state.meetings.find(function (m) { return m.id === draft.id; }) || {}, {
       id: draft.id || uid(),
       group: draft.group,
       name: draft.name,
@@ -608,8 +657,9 @@
       date: draft.date,
       time: draft.time,
       votedIds: draft.votedIds.slice(),
-      attendedIds: draft.attendedIds.slice()
-    };
+      attendedIds: draft.attendedIds.slice(),
+      rosterIds: meetingRoster(draft).map(function (p) { return p.id; })
+    });
     var idx = next.meetings.findIndex(function (m) { return m.id === record.id; });
     if (idx >= 0) next.meetings[idx] = record; else next.meetings.push(record);
     closePanel();
@@ -690,7 +740,7 @@
         major: mem.major || "", position: mem.position || POSITIONS[0]
       };
     } else {
-      memberDraft = { id: null, name: "", phone: "", email: "", major: "", position: POSITIONS[0] };
+      memberDraft = { id: null, name: "", phone: "", email: "", major: "", position: ({ Board: "President", Tech: "Tech", Events: "Events", Creative: "Creative", "Core Members": "Core Member" })[ui.memberGroup] || POSITIONS[0] };
     }
     ui.panelKind = "member";
     ui.editingId = memberId || null;
@@ -762,6 +812,7 @@
       '<header class="top">' +
         '<div class="wordmark"><img class="brandmark" src="' + LOGO_DATA_URI + '" alt="ACM logo"><h1>ACM Tracker</h1><span class="tag">votes &amp; attendance</span>' + syncBadge + '</div>' +
         '<div class="top-actions">' +
+          '<button class="btn ghost small" id="download-copy">Download saved copy</button>' +
           '<button class="theme-btn" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">' + (currentIsDark() ? "☀" : "☾") + '</button>' +
         '</div>' +
       '</header>';
@@ -774,19 +825,25 @@
       }).join("") +
       '<hr>' +
       '<button data-tab="overview" class="' + (ui.tab === "overview" ? "active" : "") + '">Overview</button>' +
-      '<button data-tab="people" class="' + (ui.tab === "people" ? "active" : "") + '">People<span class="count">' + state.people.length + '</span></button>' +
-      '<button data-tab="members" class="' + (ui.tab === "members" ? "active" : "") + '">Members<span class="count">' + state.members.length + '</span></button>' +
+      '<hr><div class="rail-label">Core members</div>' +
+      '<button data-tab="members" class="' + (ui.tab === "members" && !ui.memberGroup ? "active" : "") + '">Core Members<span class="count">' + state.members.length + '</span></button>' +
+      MEMBER_GROUPS.filter(function (g) { return g !== "Unassigned" || state.members.some(function (m) { return memberGroup(m) === g; }); }).map(function (g) {
+        return '<button data-tab="members" data-member-group="' + g + '" class="member-link ' +
+          (ui.tab === "members" && ui.memberGroup === g ? "active" : "") + '">' + groupLabel(g) +
+          '<span class="count">' + state.members.filter(function (m) { return memberGroup(m) === g; }).length + '</span></button>';
+      }).join("") + '<hr>' +
       '<button data-tab="tasks" class="' + (ui.tab === "tasks" ? "active" : "") + '">Tasks<span class="count">' + state.tasks.filter(function (t) { return !t.done; }).length + '</span></button>' +
       '</nav>';
 
     var view;
     if (ui.tab === "overview") view = renderOverview();
-    else if (ui.tab === "people") view = renderPeople();
-    else if (ui.tab === "members") view = renderMembers();
+    
+    else if (ui.tab === "members") view = renderMembers(ui.memberGroup);
     else if (ui.tab === "tasks") view = renderTasks();
     else view = renderGroup(ui.tab);
 
-    var main = '<main class="view">' + view + '</main>';
+    var storageNote = saveNotice || (persistMode === "local" ? "Auto-saved in this browser. In a chat preview, storage may reset; use Download saved copy and reopen that file to keep your entries." : "");
+    var main = '<main class="view">' + (storageNote ? '<div class="banner" role="status">' + escapeHtml(storageNote) + '</div>' : '') + view + '</main>';
 
     var panel = ui.panelOpen ? (ui.panelKind === "member" ? renderMemberPanel() : renderPanel()) : '<div class="panel" aria-hidden="true"></div>';
     var scrim = '<div class="scrim ' + (ui.panelOpen ? "show" : "") + '" id="scrim"></div>';
@@ -832,7 +889,7 @@
 
   function renderPeople() {
     var writeNote = canWrite ? "" : '<div class="banner">This view can&#39;t save changes — open ACM Tracker from your own chat to edit.</div>';
-    var head = '<div class="view-head"><div><h2>People</h2><p class="sub">Shared roster used across all three groups</p></div></div>';
+    var head = '<div class="view-head"><div><h2>People</h2><p class="sub">Shared roster used across all meeting groups</p></div></div>';
     var addForm = '<div class="add-inline"><input type="text" id="new-person-input" placeholder="Full name"><button class="btn small" id="add-person-btn">Add</button></div>';
     var rows;
     if (!state.people.length) {
@@ -856,16 +913,16 @@
     '</div>';
   }
 
-  function renderMembers() {
+  function renderMembers(selectedGroup) {
     var writeNote = canWrite ? "" : '<div class="banner">This view can&#39;t save changes — open ACM Tracker from your own chat to edit.</div>';
-    var head = '<div class="view-head"><div><h2>Members</h2><p class="sub">' + state.members.length + ' member' + (state.members.length === 1 ? "" : "s") + ' — auto-grouped by role into Board, Events, Tech &amp; Creative</p></div>' +
+    var head = '<div class="view-head"><div><h2>' + escapeHtml(selectedGroup ? groupLabel(selectedGroup) : "Core Members") + '</h2><p class="sub">Browse members by role and manage their details</p></div>' +
       '<button class="btn" data-action="new-member">+ New member</button></div>';
     var body;
     if (!state.members.length) {
-      body = '<div class="empty"><div class="big">No members added yet</div>Add a member and pick their position — they\u2019ll be sorted into Board, Events, Tech or Creative automatically.</div>';
+      body = '<div class="empty"><div class="big">No members added yet</div>Add a member and pick their position to organize them into a team.</div>';
     } else {
-      body = MEMBER_GROUPS.map(function (g) {
-        var groupMembers = state.members.filter(function (m) { return (POSITION_GROUP[m.position] || "Events") === g; })
+      body = (selectedGroup ? [selectedGroup] : MEMBER_GROUPS).map(function (g) {
+        var groupMembers = state.members.filter(function (m) { return memberGroup(m) === g; })
           .sort(function (a, b) {
             var ra = POSITION_RANK[a.position]; ra = (ra == null) ? 9 : ra;
             var rb = POSITION_RANK[b.position]; rb = (rb == null) ? 9 : rb;
@@ -875,7 +932,7 @@
         var inner = groupMembers.length
           ? groupMembers.map(renderMemberRow).join("")
           : '<div class="roster-empty">No one here yet</div>';
-        return '<div class="member-group"><div class="member-group-title">' + g +
+        return '<div class="member-group"><div class="member-group-title">' + groupLabel(g) +
           '<span class="count">' + groupMembers.length + '</span></div>' + inner + '</div>';
       }).join("");
     }
@@ -896,7 +953,7 @@
     }
 
     var sidebar = MEMBER_GROUPS.map(function (g) {
-      var ms = state.members.filter(function (m) { return (POSITION_GROUP[m.position] || "Events") === g; })
+      var ms = state.members.filter(function (m) { return memberGroup(m) === g; })
         .sort(function (a, b) {
           var ra = POSITION_RANK[a.position]; ra = (ra == null) ? 9 : ra;
           var rb = POSITION_RANK[b.position]; rb = (rb == null) ? 9 : rb;
@@ -956,7 +1013,7 @@
 
     var cards = '<div class="stat-cards">' +
       statCard(totalMeetings, "entries logged") +
-      statCard(state.people.length, "people on roster") +
+      statCard(state.members.length, "core members") +
       statCard(totalVotes, "total votes to attend") +
       statCard((totalVotes > 0 ? overallPct + "%" : "—"), "overall turnout") +
       '</div>';
@@ -1000,24 +1057,52 @@
     var timeBlock = '<div class="insight-block"><h4>Timings with the most votes</h4>' +
       (timeRows ? '<div class="time-list">' + timeRows + '</div>' : '<p class="sub">No timed entries logged yet.</p>') + '</div>';
 
-    return '<div class="view-head"><div><h2>Overview</h2><p class="sub">Across Events, Technical Team and Board Members</p></div></div>' +
-      cards + typeBlock + groupBlock + timeBlock;
+    var memberBlock = '<div class="insight-block"><h4>Member activity by team</h4><p class="sub">Active = attended at least one logged meeting.</p>' +
+      MEMBER_GROUPS.map(function (g) {
+        var members = state.members.filter(function (m) { return memberGroup(m) === g; });
+        if (!members.length && g === "Unassigned") return "";
+        var active = members.filter(function (member) {
+          var ids = [member.id].concat(state.people.filter(function (p) { return p.name.trim().toLowerCase() === member.name.trim().toLowerCase(); }).map(function (p) { return p.id; }));
+          return state.meetings.some(function (meeting) { return meeting.attendedIds.some(function (id) { return ids.indexOf(id) !== -1; }); });
+        }).length;
+        return '<div class="time-row"><span>' + groupLabel(g) + '</span><span class="v">' + active + ' active / ' + members.length + ' members</span></div>';
+      }).join("") + '</div>';
+
+    return '<div class="view-head"><div><h2>Overview</h2><p class="sub">Across all teams and Core Members meetings</p></div></div>' +
+      cards + memberBlock + typeBlock + groupBlock + timeBlock;
   }
 
   function statCard(num, lbl) {
     return '<div class="stat-card"><div class="num">' + num + '</div><div class="lbl">' + escapeHtml(lbl) + '</div></div>';
   }
 
+  function meetingRoster(d) {
+    var team = { technical: "Tech", events: "Events", creative: "Creative", board: "Board" }[d.group];
+    var selected = d.votedIds.concat(d.attendedIds);
+    var result = state.members.filter(function (m) { return !team || memberGroup(m) === team; }).map(function (m) {
+      // Keep old attendance IDs when a prior roster name matches this member.
+      var legacy = state.people.find(function (p) {
+        return selected.indexOf(p.id) !== -1 && p.name.trim().toLowerCase() === m.name.trim().toLowerCase();
+      });
+      return { id: legacy ? legacy.id : m.id, name: m.name };
+    });
+    selected.forEach(function (id) {
+      if (result.some(function (p) { return p.id === id; })) return;
+      var p = state.members.concat(state.people).find(function (p) { return p.id === id; });
+      result.push({ id: id, name: p ? p.name : "(Former member)" });
+    });
+    return result.sort(function (a, b) { return a.name.localeCompare(b.name); });
+  }
+
   function renderPanel() {
     var isEdit = !!ui.editingId;
     var d = draft;
     var q = ui.rosterQuery.toLowerCase();
-    var people = state.people.filter(function (p) { return p.name.toLowerCase().indexOf(q) !== -1; })
-      .concat(d.newPeople.map(function (nm, i) { return { id: "__new" + i, name: nm, isNew: true }; }))
-      .sort(function (a, b) { return a.name.localeCompare(b.name); });
+    var roster = meetingRoster(d);
+    var people = roster.filter(function (p) { return p.name.toLowerCase().indexOf(q) !== -1; });
 
     function checklistCol(kind, arr) {
-      if (!people.length) return '<div class="roster-empty">No matches. Add a name below.</div>';
+      if (!people.length) return '<div class="roster-empty">No matching members. Add members to this team in Core Members first.</div>';
       return people.map(function (p) {
         var checked = arr.indexOf(p.id) !== -1 || (p.isNew && arr.indexOf(p.name) !== -1);
         var pid = p.id;
@@ -1041,12 +1126,12 @@
           '<div class="field"><label>Date</label><input type="date" id="f-date" value="' + escapeHtml(d.date) + '"></div>' +
         '</div>' +
         '<div class="field"><label>Time</label><input type="time" id="f-time" value="' + escapeHtml(d.time) + '"></div>' +
-        '<div class="field roster-search"><label>Search roster</label><input type="text" id="f-roster-search" placeholder="Filter names…" value="' + escapeHtml(ui.rosterQuery) + '"></div>' +
+        '<div class="field roster-search"><label>Search team members</label><input type="text" id="f-roster-search" placeholder="Filter names…" value="' + escapeHtml(ui.rosterQuery) + '"></div>' +
+        '<p class="sub">' + roster.length + ' members listed. Check Actually attended for those present; unchecked members are absent.</p>' +
         '<div class="roster-cols">' +
           '<div><div class="col-title">Voted to attend</div>' + checklistCol("voted", d.votedIds) + '</div>' +
           '<div><div class="col-title">Actually attended</div>' + checklistCol("attended", d.attendedIds) + '</div>' +
         '</div>' +
-        '<div class="add-person-row"><input type="text" id="f-new-person" placeholder="Add a new name to the roster"><button class="btn ghost small" id="f-add-person">Add</button></div>' +
       '</div>' +
       '<div class="panel-foot">' +
         (isEdit ? '<button class="btn danger" id="f-delete">Delete</button>' : '<span></span>') +
@@ -1082,6 +1167,8 @@
 
   /* ---------------- wiring ---------------- */
   function wireGlobal() {
+    var downloadBtn = document.getElementById("download-copy");
+    if (downloadBtn) downloadBtn.onclick = downloadSavedCopy;
     var themeBtn = document.getElementById("theme-toggle");
     if (themeBtn) themeBtn.onclick = function () {
       var next = currentIsDark() ? "light" : "dark";
@@ -1092,7 +1179,7 @@
     };
 
     document.querySelectorAll("nav.rail button[data-tab]").forEach(function (b) {
-      b.onclick = function () { ui.tab = b.getAttribute("data-tab"); render(); };
+      b.onclick = function () { ui.tab = b.getAttribute("data-tab"); ui.memberGroup = b.getAttribute("data-member-group") || null; render(); };
     });
 
     document.querySelectorAll("[data-action='new-meeting']").forEach(function (b) {
